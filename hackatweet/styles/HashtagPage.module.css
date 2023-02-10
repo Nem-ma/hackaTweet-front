@@ -1,0 +1,21 @@
+.allPage {
+  display: flex;
+  justify-content: center;
+}
+.logo {
+  background-color: rgb(17, 24, 32);
+  margin: 10px;
+}
+.borderRight {
+  width: 25%;
+  border: 1px gray solid;
+}
+.borderleft {
+  width: 25%;
+  border: 1px gray solid;
+}
+.topPage {
+  width: 50%;
+  height: 150px;
+  border: 1px gray solid;
+}

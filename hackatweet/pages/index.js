@@ -1,7 +1,9 @@
-import Home from '../components/Home';
+import Home from "../components/Home";
+import Trends from "../components/Trend";
+import HashtagHomePage from "./hashtag/index";
+import SignIn from "../components/SignIn";
+import Login from "../components/Login";
 
-function Index() {
-  return <Home />;
+export default function Index() {
+  return <Login />;
 }
-
-export default Index;

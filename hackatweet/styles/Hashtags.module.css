@@ -1,0 +1,35 @@
+.content {
+  border-block-end: 1px gray solid;
+  height: 150px;
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white;
+}
+.inputContainer {
+  margin-left: 30px;
+}
+.inputZone {
+  border: none;
+  background-color: transparent;
+  width: 80%;
+  height: 50px;
+}
+.inputZone:focus {
+  outline: none;
+  box-shadow: none !important;
+  color: white;
+}
+.cheatInput {
+  display: flex;
+  align-items: center;
+  margin-left: 60px;
+  padding-left: 10px;
+  width: 80%;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(22, 29, 38);
+  color: white;
+}
