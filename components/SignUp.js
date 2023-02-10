@@ -11,10 +11,10 @@ function SignUp({ setShowSignUp }) {
   const dispatch = useDispatch();
 
   function SignUp() {
-    fetch("http://localhost:3000/signin", {
+    fetch("http://localhost:3000/users/signup", {
       method: "POST",
       headers: {
-        "content-type": "application.json",
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         firstname: singUpFirstname,
@@ -24,6 +24,7 @@ function SignUp({ setShowSignUp }) {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data.result) {
           dispatch(
             currentUser({
@@ -32,7 +33,7 @@ function SignUp({ setShowSignUp }) {
               firstname: data.firstname,
             })
           );
-          return <Navigate replace to="/home" />;
+          // return <Navigate replace to="/home" />;
         }
       });
   }

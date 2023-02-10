@@ -2,16 +2,19 @@ import styles from "../styles/Modal.module.css";
 import Modal from "react-modal";
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { currentUser } from "../reducers/user";
 
 function SignIn({ setShowSignIn }) {
   const [singInUsername, setSignInUsername] = useState("");
   const [singInPassword, setSignInPassword] = useState("");
+const dispatch = useDispatch();
 
   function SignIn() {
-    fetch("http://localhost:3000/signin", {
+    fetch("http://localhost:3000/users/signin", {
       method: "POST",
       headers: {
-        "content-type": "application.json",
+        "content-type": "application/json",
       },
       body: JSON.stringify({
         username: singInUsername,
@@ -20,8 +23,17 @@ function SignIn({ setShowSignIn }) {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data.result) {
-          return <Navigate replace to="/home" />;
+          dispatch(
+            currentUser({
+              token: data.token,
+              username: data.username,
+              firstname: data.firstname,
+            })
+          );
+          console.log("ok");
+          // return <Navigate replace to="/home" />;
         }
       });
   }
